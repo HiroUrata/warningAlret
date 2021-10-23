@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     
+    var textContents = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,25 +25,42 @@ class ViewController: UIViewController {
         if sender.text?.count == 4{
             
             judge(judgeTarget: sender.text!)
+            
         }
         
     }
     
     func judge(judgeTarget:String){
         
-        if Int(judgeTarget.prefix(2).suffix(1)) == Int(judgeTarget.prefix(1))! + 1 && Int(judgeTarget.prefix(3).suffix(1)) == Int(judgeTarget.prefix(2).suffix(1))! + 1 &&
-            Int(judgeTarget.suffix(1)) == Int(judgeTarget.prefix(3).suffix(1))! + 1{
+        textContents = []
+        
+        for text in judgeTarget{
             
-            alert()
-            
-        }else if Int(judgeTarget.prefix(2).suffix(1)) == Int(judgeTarget.prefix(1))! - 1 && Int(judgeTarget.prefix(3).suffix(1)) == Int(judgeTarget.prefix(2).suffix(1))! - 1 && Int(judgeTarget.suffix(1)) == Int(judgeTarget.prefix(3).suffix(1))! - 1{
-            
-            alert()
-            
-        }else if judgeTarget.prefix(1) == judgeTarget.prefix(2).suffix(1) && judgeTarget.prefix(1) == judgeTarget.prefix(3).suffix(1) && judgeTarget.prefix(1) == judgeTarget.suffix(1){
-            
-            alert()
+            textContents.append(String(text))
         }
+        
+        switch Int(textContents[0])! < Int(textContents[3])!{
+        
+        case true:
+            <#code#>
+        case false:
+            <#code#>
+        }
+        
+        
+//        if Int(judgeTarget.prefix(2).suffix(1)) == Int(judgeTarget.prefix(1))! + 1 && Int(judgeTarget.prefix(3).suffix(1)) == Int(judgeTarget.prefix(2).suffix(1))! + 1 &&
+//            Int(judgeTarget.suffix(1)) == Int(judgeTarget.prefix(3).suffix(1))! + 1{
+//
+//            alert()
+//
+//        }else if Int(judgeTarget.prefix(2).suffix(1)) == Int(judgeTarget.prefix(1))! - 1 && Int(judgeTarget.prefix(3).suffix(1)) == Int(judgeTarget.prefix(2).suffix(1))! - 1 && Int(judgeTarget.suffix(1)) == Int(judgeTarget.prefix(3).suffix(1))! - 1{
+//
+//            alert()
+//
+//        }else if judgeTarget.prefix(1) == judgeTarget.prefix(2).suffix(1) && judgeTarget.prefix(1) == judgeTarget.prefix(3).suffix(1) && judgeTarget.prefix(1) == judgeTarget.suffix(1){
+//
+//            alert()
+//        }
         
     }
     

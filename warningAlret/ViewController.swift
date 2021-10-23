@@ -37,15 +37,38 @@ class ViewController: UIViewController {
         for text in judgeTarget{
             
             textContents.append(String(text))
+            print(textContents)
         }
         
-        switch Int(textContents[0])! < Int(textContents[3])!{
-        
-        case true:
-            <#code#>
-        case false:
-            <#code#>
+        if textContents[0] == textContents[1] &&
+           textContents[0] == textContents[2] &&
+           textContents[0] == textContents[3]{
+            
+            alert()
+            
+        }else{
+            
+            switch Int(textContents[0])! < Int(textContents[3])!{
+            
+            case true:
+                if Int(textContents[3])! - Int(textContents[0])! == 3 &&
+                   (Int(textContents[1])! - Int(textContents[0])!) + (Int(textContents[3])! - Int(textContents[2])!) == 2{
+                    
+                    alert()
+                }
+                
+            case false:
+                
+                if Int(textContents[0])! - Int(textContents[3])! == 3 &&
+                   (Int(textContents[0])! - Int(textContents[1])!) + (Int(textContents[2])! - Int(textContents[3])! ) == 2{
+                     
+                     alert()
+                 }
+                
+            }
         }
+        
+        
         
         
 //        if Int(judgeTarget.prefix(2).suffix(1)) == Int(judgeTarget.prefix(1))! + 1 && Int(judgeTarget.prefix(3).suffix(1)) == Int(judgeTarget.prefix(2).suffix(1))! + 1 &&

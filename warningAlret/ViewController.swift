@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         for text in judgeTarget{
             
             textContents.append(String(text))
+            textContents.sort()
             print(textContents)
         }
         
@@ -46,26 +47,11 @@ class ViewController: UIViewController {
             
             alert()
             
-        }else{
+        }else if Int(textContents[3])! - Int(textContents[0])! == 3 &&
+                (Int(textContents[1])! - Int(textContents[0])!) + (Int(textContents[3])! - Int(textContents[2])!) == 2{
             
-            switch Int(textContents[0])! < Int(textContents[3])!{
-            
-            case true:
-                if Int(textContents[3])! - Int(textContents[0])! == 3 &&
-                   (Int(textContents[1])! - Int(textContents[0])!) + (Int(textContents[3])! - Int(textContents[2])!) == 2{
-                    
-                    alert()
-                }
-                
-            case false:
-                
-                if Int(textContents[0])! - Int(textContents[3])! == 3 &&
-                   (Int(textContents[0])! - Int(textContents[1])!) + (Int(textContents[2])! - Int(textContents[3])! ) == 2{
-                     
-                     alert()
-                 }
-                
-            }
+            alert()
+           
         }
         
         
